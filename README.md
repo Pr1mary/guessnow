@@ -1,0 +1,2 @@
+# memoz
+project mobile programming
