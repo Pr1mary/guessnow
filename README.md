@@ -1,5 +1,7 @@
 # memoz
-Project mobile programming
+Memoz android app - Project mobile programming
+
+Link to the back-end api repos: https://github.com/Pr1mary/memoz-api
 
 Anggota kelompok:
 
