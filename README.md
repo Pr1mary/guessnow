@@ -1,7 +1,7 @@
-# memoz
-Memoz android app - Project mobile programming
+# GuessNow
+GuessNow android app - Project mobile programming
 
-Link to the back-end api repos: https://github.com/Pr1mary/memoz-api
+Link to the back-end api repos: https://github.com/Pr1mary/guessnow-api
 
 ### Anggota kelompok:
 
