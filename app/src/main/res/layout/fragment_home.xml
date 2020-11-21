@@ -7,9 +7,10 @@
         android:id="@+id/btn_createroom"
         android:layout_width="206dp"
         android:layout_height="68dp"
-        android:layout_above="@+id/UniqueCodeRoom"
+        android:layout_above="@+id/etUniqueCode"
         android:layout_centerInParent="true"
         android:layout_marginBottom="22dp"
+
 
         android:background="@android:color/holo_blue_dark"
 
@@ -20,7 +21,7 @@
     </Button>
 
     <EditText
-        android:id="@+id/UniqueCodeRoom"
+        android:id="@+id/etUniqueCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -33,10 +34,11 @@
         android:textColor="@android:color/black"
         android:importantForAutofill="no" />
     <Button
+        android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/UniqueCodeRoom"
+        android:layout_below="@+id/etUniqueCode"
         android:text="Confirm"
 
 </RelativeLayout>
