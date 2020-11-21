@@ -4,7 +4,7 @@
     android:background="#DAF7A6 ">
 
     <Button
-        android:id="@+id/createroom"
+        android:id="@+id/btn_createroom"
         android:layout_width="206dp"
         android:layout_height="68dp"
         android:layout_above="@+id/UniqueCodeRoom"
