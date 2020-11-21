@@ -3,16 +3,40 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="#DAF7A6 ">
 
-    <TextView
+    <Button
+        android:id="@+id/createroom"
+        android:layout_width="206dp"
+        android:layout_height="68dp"
+        android:layout_above="@+id/UniqueCodeRoom"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="22dp"
+
+        android:background="@android:color/holo_blue_dark"
+
+        android:size
+        android:text="Create Room"
+        android:textColor="@android:color/background_light">
+
+    </Button>
+
+    <EditText
+        android:id="@+id/UniqueCodeRoom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_red_dark"
-        android:text="Home Fragment"
-        android:textSize="40sp"
         android:layout_centerInParent="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Input Code"
+        android:textAlignment="center"
 
-        >
 
-    </TextView>
+        android:textColor="@android:color/black"
+        android:importantForAutofill="no" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/UniqueCodeRoom"
+        android:text="Confirm"
 
 </RelativeLayout>
