@@ -14,7 +14,7 @@
 
         android:background="@android:color/holo_blue_dark"
 
-        android:size
+        android:textSize="20sp"
         android:text="Create Room"
         android:textColor="@android:color/background_light">
 
@@ -39,6 +39,9 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_below="@+id/etUniqueCode"
-        android:text="Confirm"
+        android:text="Confirm">
+        
+    </Button>
+
 
 </RelativeLayout>
