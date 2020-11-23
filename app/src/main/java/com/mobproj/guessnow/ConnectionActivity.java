@@ -27,7 +27,7 @@ public class ConnectionActivity extends AppCompatActivity {
 
     private Emitter.Listener newMsg = args -> {
         this.runOnUiThread(() -> {
-            JSONObject data = (JSONObject) args[0];
+//            JSONObject data = (JSONObject) args[0];
         });
     };
 

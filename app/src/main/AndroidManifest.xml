@@ -13,9 +13,9 @@
         android:theme="@style/Theme.Guessnow"
         android:usesCleartextTraffic="true">
         <activity android:name=".LoginActivity"></activity>
-        <activity
-            android:name=".ui.login.activity_login"
-            android:label="@string/title_activity_login" />
+<!--        <activity-->
+<!--            android:name=".LoginActivity"-->
+<!--            android:label="@string/title_activity_login" />-->
         <activity android:name=".Create_room" />
         <activity android:name=".ConnectionActivity">
             <intent-filter>

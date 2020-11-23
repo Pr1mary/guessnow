@@ -9,14 +9,12 @@
         android:layout_height="120dp"
         android:src="@drawable/ic_baseline_account_box_24"
         android:layout_above="@+id/user"
-        android:layout_centerInParent="true"
-
+        android:layout_centerInParent="true"/>
 
     <ImageView
         android:id="@+id/ImageViewProfile"
         android:layout_width="120dp"
-        android:layout_height="120dp"
-
+        android:layout_height="120dp"/>
 
     <TextView
         android:id="@+id/user"
@@ -25,11 +23,8 @@
         android:textColor="@android:color/holo_red_dark"
         android:text="Welcome user"
         android:textSize="50sp"
-        android:layout_centerInParent="true"
+        android:layout_centerInParent="true"/>
 
-        >
-
-    </TextView>
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
@@ -37,10 +32,7 @@
         android:layout_below="@+id/user"
         android:layout_centerInParent="true"
         android:text="Log out"
-        android:textSize="30sp"
-        >
-
-    </Button>
+        android:textSize="30sp"/>
 
 
 </RelativeLayout>
