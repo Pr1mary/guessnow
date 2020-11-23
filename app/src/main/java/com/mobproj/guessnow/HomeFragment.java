@@ -17,27 +17,20 @@ public class HomeFragment extends Fragment{
     private Button btn_createroom;
     public static final int LENGTH_SHORT = 0;
 
-
-
-
-
     @Nullable
     @Override
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    { View view = inflater.inflate(R.layout.fragment_home, container);
-    init(View);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container);
+        init(view);
 
-    btn_createroom.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
-        }
-    });
-
-
+        btn_createroom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "", Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
-
     }
 
     private void init(View view) {
