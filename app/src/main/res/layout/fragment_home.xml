@@ -5,20 +5,12 @@
 
     <Button
         android:id="@+id/btn_createroom"
-        android:layout_width="206dp"
-        android:layout_height="68dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/etUniqueCode"
         android:layout_centerInParent="true"
         android:layout_marginBottom="22dp"
-
-
-        android:background="@android:color/holo_blue_dark"
-
-        android:textSize="20sp"
-        android:text="Create Room"
-        android:textColor="@android:color/background_light">
-
-    </Button>
+        android:text="Create Room"/>
 
     <EditText
         android:id="@+id/etUniqueCode"
@@ -29,10 +21,9 @@
         android:inputType="textPersonName"
         android:text="Input Code"
         android:textAlignment="center"
-
-
         android:textColor="@android:color/black"
         android:importantForAutofill="no" />
+
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
