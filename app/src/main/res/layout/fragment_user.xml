@@ -19,14 +19,9 @@
         android:id="@+id/user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_red_dark"
         android:text="Welcome user"
         android:textSize="50sp"
-        android:layout_centerInParent="true"
-
-        >
-
-    </TextView>
+        android:layout_centerInParent="true"/>
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
@@ -34,10 +29,7 @@
         android:layout_below="@+id/user"
         android:layout_centerInParent="true"
         android:text="Log out"
-        android:textSize="30sp"
-        >
-
-    </Button>
+        android:textSize="30sp"/>
 
 
 </RelativeLayout>
