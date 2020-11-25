@@ -1,4 +1,4 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.connection_test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ import com.github.nkzawa.engineio.client.Transport;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Manager;
 import com.github.nkzawa.socketio.client.Socket;
+import com.mobproj.guessnow.R;
 
 import org.json.JSONObject;
 

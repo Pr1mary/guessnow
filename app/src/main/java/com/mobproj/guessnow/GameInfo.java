@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.mobproj.guessnow.home_group.MainActivity;
+
 import java.util.ArrayList;
 
 public class GameInfo extends AppCompatActivity {

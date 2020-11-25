@@ -1,8 +1,10 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.login_group;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.mobproj.guessnow.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.home_group;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.mobproj.guessnow.R;
 
 public class HomeFragment extends Fragment{
     EditText etUniqueCode;
