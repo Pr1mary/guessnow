@@ -1,13 +1,20 @@
 package com.mobproj.guessnow;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class GameInfo extends AppCompatActivity {
+    private ArrayList<User> list;
+    private RecyclerView recycler;
+    private UserAdapter.clikListener listener;
     private Button GameInfo, GameRoom;
 
     @Override
@@ -30,5 +37,35 @@ public class GameInfo extends AppCompatActivity {
                 startActivity(ganti2);
             }
         });
+
+        recycler = findViewById(R.id.);
+        list = new ArrayList<>();
+
+        list.add(new User("1.UserOne","15",R.drawable.1));
+        list.add(new User("2.Ricky","10",R.drawable.2);
+        list.add(new User("3.Anthony9","25",R.drawable.3));
+        list.add(new User("4.Johnjohnny","10",R.drawable.4));
+        list.add(new User("5.Mystic","30",R.drawable.5));
+        list.add(new User("6.Noname","0",R.drawable.6));
+
+        adapterr();
+    }
+    private void adapterr() {
+
+        listener = new UserAdapter.clikListener() {
+            @Override
+            public void onClik(View v, int position) {
+                Intent intent = new Intent(getApplicationContext(), GameInfo.class);
+                intent.putExtra("nama", list.get(position).getNama());
+                intent.putExtra("score", list.get(position).getScore());
+                startActivity(intent);
+            }
+        };
+
+
+        UserAdapter adapter = new UserAdapter(list, listener);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recycler.setLayoutManager(layoutManager);
+        recycler.setAdapter(adapter );
     }
 }

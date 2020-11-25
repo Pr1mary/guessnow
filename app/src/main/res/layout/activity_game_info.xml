@@ -23,62 +23,17 @@
         </TextView>
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:text="1.UserOne"
+        android:textSize="20dp"
+        android:id="@+id/nama"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="10dp"
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="1.UserOne"
-            android:textSize="20dp"
-            android:layout_marginTop="230dp"
-            android:layout_marginLeft="10dp"
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="2.Ricky"
-            android:textSize="20dp"
-            android:layout_marginTop="270dp"
-            android:layout_marginLeft="10dp"
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="3.Anthony9"
-            android:textSize="20dp"
-            android:layout_marginTop="310dp"
-            android:layout_marginLeft="10dp"
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="4.JohnJohnny"
-            android:textSize="20dp"
-            android:layout_marginTop="350dp"
-            android:layout_marginLeft="10dp"
-
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,73 +52,18 @@
         </TextView>
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:text="15"
+        android:textSize="20dp"
+        android:id="@+id/score"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="160dp"
+
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="15"
-            android:textSize="20dp"
-            android:layout_marginTop="230dp"
-            android:layout_marginLeft="160dp"
-
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="10"
-            android:textSize="20dp"
-            android:layout_marginTop="270dp"
-            android:layout_marginLeft="160dp"
-
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="25"
-            android:textSize="20dp"
-            android:layout_marginTop="310dp"
-            android:layout_marginLeft="160dp"
-
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:text="10"
-            android:textSize="20dp"
-            android:layout_marginTop="350dp"
-            android:layout_marginLeft="160dp"
-
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
