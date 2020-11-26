@@ -10,8 +10,8 @@
         android:id="@+id/answer4"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Button"
         android:gravity="center"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,8 +22,8 @@
         android:id="@+id/answer3"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Button"
         android:gravity="center"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,8 +34,8 @@
         android:id="@+id/answer2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Button"
         android:gravity="center"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +46,8 @@
         android:id="@+id/answer1"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Button"
         android:gravity="center"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,17 +70,16 @@
 
     <TextView
         android:id="@+id/score"
-        android:layout_width="392dp"
-        android:layout_height="32dp"
-        android:text="TextView"
-        android:textSize="24dp"
+        android:layout_width="141dp"
+        android:layout_height="57dp"
         android:gravity="center"
+        android:text="TextView"
+        android:textSize="21dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintVertical_bias="0.142" />
 
     <TextView
         android:id="@+id/question"
@@ -91,9 +90,32 @@
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249" />
+        app:layout_constraintVertical_bias="0.351" />
+
+    <TextView
+        android:id="@+id/gameroom"
+        android:layout_width="208dp"
+        android:layout_height="54dp"
+        android:text="Game Room"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/gameinfo"
+        android:layout_width="203dp"
+        android:layout_height="55dp"
+        android:text="Game Info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

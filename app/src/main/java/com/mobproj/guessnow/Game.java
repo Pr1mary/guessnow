@@ -16,7 +16,7 @@ public class Game extends AppCompatActivity {
 
     Button answer1,answer2,answer3,answer4;
 
-    TextView score, question;
+    TextView score, question,gameroom,gameinfo;
 
     private Questions mQuestions = new Questions();
 
@@ -40,6 +40,8 @@ public class Game extends AppCompatActivity {
 
         score = (TextView) findViewById(R.id.score);
         question= (TextView) findViewById(R.id.question);
+        gameroom= (TextView) findViewById(R.id.gameroom);
+        gameinfo= (TextView) findViewById(R.id.gameinfo);
 
         score.setText("Score:  " +mScore);
 
@@ -145,5 +147,10 @@ public class Game extends AppCompatActivity {
 
 
 
+    }
+
+    public void pindah(View view){
+        Intent intent = new Intent(Game.this,GameInfo.class);
+        startActivity(intent);
     }
 }
