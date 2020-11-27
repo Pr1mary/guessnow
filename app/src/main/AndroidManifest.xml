@@ -12,26 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Guessnow"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoginActivity"></activity>
-<!--        <activity-->
-<!--            android:name=".LoginActivity"-->
-<!--            android:label="@string/title_activity_login" />-->
-        <activity android:name=".Create_room" />
-        <activity android:name=".ConnectionActivity">
+        <activity android:name=".login_group.LoginActivity">
+
+        </activity>
+        <activity android:name=".connection_test.ConnectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".home_group.MainActivity">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
     </application>
 

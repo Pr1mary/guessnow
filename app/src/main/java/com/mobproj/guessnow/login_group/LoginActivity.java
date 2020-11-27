@@ -1,15 +1,16 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.login_group;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Create_room extends AppCompatActivity
-{
+import com.mobproj.guessnow.R;
+
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_room);
+        setContentView(R.layout.activity_login);
     }
 }

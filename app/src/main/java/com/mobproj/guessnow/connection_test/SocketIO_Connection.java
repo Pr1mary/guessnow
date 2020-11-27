@@ -1,4 +1,4 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.connection_test;
 
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;

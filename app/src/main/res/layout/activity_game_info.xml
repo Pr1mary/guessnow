@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameInfo">
+    tools:context=".not_used.GameInfo">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/GameInfo"
-                android:text="GameInfo"
+                android:text="GameInfo"/>
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
