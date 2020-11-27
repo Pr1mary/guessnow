@@ -50,9 +50,9 @@ public class GameInfo extends AppCompatActivity {
 //        list.add(new User("4.Johnjohnny","10",R.drawable.4));
 //        list.add(new User("5.Mystic","30",R.drawable.5));
 //        list.add(new User("6.Noname","0",R.drawable.6));
-//
-//        adapterr();
-//    }
+
+        adapterr();
+    }
     private void adapterr() {
 
         listener = new UserAdapter.clikListener() {
