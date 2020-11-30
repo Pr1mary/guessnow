@@ -1,46 +1,23 @@
 package com.mobproj.guessnow.not_used;
 
 public class User {
-    String nama;
-    String score;
-    int thumbnail;
 
-    public User(String nama, String score, int thumbnail) {
-        this.nama = nama;
-        score = score;
-        this.thumbnail = thumbnail;
-    }
+    public static String[] title = new String[]{
+            "Room Code:"
+            "Username:"
+            "1.UserOne"
+            "2.Ricky"
+            "3.Anthony9"
+            "4.JohnJohnny"
+    };
 
-    public int getThumbnail() {
-        return thumbnail;
-    }
+    public static String[] title = new String[]{
+            "123456"
+            "Score:"
+            "15"
+            "10"
+            "25"
+            "10"
+    };
 
-    public void setThumbnail(int thumbnail) {
-        this.thumbnail = thumbnail;
-    }
-
-    public User(int thumbnail) {
-        this.thumbnail = thumbnail;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setNama(String namaMenu) {
-        this.nama = namaMenu;
-    }
-
-    public String getScore() {
-        return score;
-    }
-
-    public void setScore(String hargaMenu) {
-        score = hargaMenu;
-    }
-
-    public User(String nama, String score) {
-        this.nama = nama;
-        score = score;
-    }
 }
