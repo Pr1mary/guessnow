@@ -19,7 +19,7 @@ public class UserAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_game_info, parent, false);
-        return new ListViewHolder(View);
+        return new ListViewHolder(view);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class UserAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return User.title.length;
+        return User.title1.length;
     }
 
     private class ListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -45,8 +45,8 @@ public class UserAdapter extends RecyclerView.Adapter {
         }
 
         public void bindView(int position){
-            mItemName.setText(User.title[position]);
-            mItemScore.setText(User.title[position]);
+            mItemName.setText(User.title1[position]);
+            mItemScore.setText(User.title2[position]);
         }
 
         public void onClick(View view){

@@ -21,7 +21,7 @@ import com.mobproj.guessnow.not_used.UserAdapter;
 import java.util.ArrayList;
 
 
-public class GameInfo extends Fragment,{
+public class GameInfo extends Fragment{
 
     public View OnCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstance){
 
