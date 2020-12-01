@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login_group.LoginActivity">
+    android:background="#fc8c03">
 
-    <Button
-        android:id="@+id/joinBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginBottom="64dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:enabled="true"
-        android:text="join"
-        android:textSize="24sp"
-        app:iconTint="@color/teal_700"
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="212dp"
+        android:layout_height="158dp"
+        android:contentDescription="@string/invalid_username"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.236" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.212"
+        app:srcCompat="@drawable/ic_baseline_account_box_24" />
 
     <EditText
         android:id="@+id/username"
@@ -33,13 +26,36 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="212dp"
-        android:hint="insert username"
+        android:autofillHints=""
+        android:background="#DCA639"
+        android:hint="@string/invalid_username"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
-        android:textSize="30sp"
+        android:text="@string/invalid_username"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.541"
+        tools:text="Username:" />
+
+    <Button
+        android:id="@+id/joinBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:enabled="true"
+        android:textSize="24sp"
+        app:iconTint="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.743"
+        tools:text="Join" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
