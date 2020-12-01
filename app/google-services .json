@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "554340527606",
+    "firebase_url": "https://gameroom-52a2c.firebaseio.com",
+    "project_id": "gameroom-52a2c",
+    "storage_bucket": "gameroom-52a2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554340527606:android:1967bbf58e48f71752abd7",
+        "android_client_info": {
+          "package_name": "com.mobproj.guessnow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554340527606-1lg0fhvjpgul5o8uk1av19gdr0c98f6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobproj.guessnow",
+            "certificate_hash": "eb7f2e78ce54aeed95b1ff5d8d99911265f94fb7"
+          }
+        },
+        {
+          "client_id": "554340527606-q0rp23ndcq4niic6phek5o2e4575b7ko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZPKAQfFENqGSHhmHaU_mty80jzP6VjxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554340527606-q0rp23ndcq4niic6phek5o2e4575b7ko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
