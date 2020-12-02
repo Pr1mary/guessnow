@@ -1,4 +1,4 @@
-package com.mobproj.guessnow.Model;
+package com.mobproj.guessnow.not_used;
 
 public class Chat {
     private String sender;

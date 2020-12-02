@@ -2,7 +2,6 @@ package com.mobproj.guessnow;
 
 import android.os.Bundle;
 import android.widget.FrameLayout;
-import android.widget.TableLayout;
 import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,8 +22,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-
-        frameLayout = findViewById(R.id.simpleFrameLayout);
+        frameLayout = findViewById(R.id.layoutContainer);
 
         tabLayout = findViewById(R.id.tabs);
         tabLayout.addTab(tabLayout.newTab().setText("Game Room"));
@@ -33,19 +31,21 @@ public class GameActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                Fragment fragment = null;
+
+                Fragment fragment = new GameRoom_frg();
+
                 switch (tab.getPosition()){
                     case 0:
-                        fragment = new GameRoom();
+                        fragment = new GameRoom_frg();
                         break;
                     case 1:
-                        fragment = new GameInfo();
+                        fragment = new GameInfo_frg();
                         break;
                 }
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.simpleFrameLayout,fragment);
+                fragmentTransaction.replace(R.id.layoutContainer,fragment);
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 fragmentTransaction.commit();
             }

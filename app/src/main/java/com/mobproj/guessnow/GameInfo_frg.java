@@ -1,0 +1,38 @@
+package com.mobproj.guessnow;
+
+import android.os.Bundle;
+import android.text.Layout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class GameInfo_frg extends Fragment {
+
+    TextView roominfo;
+    Integer roomCode;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_game_info, container, false);
+
+        roominfo = view.findViewById(R.id.RoomID);
+        roominfo.setText("Room: "+roomCode);
+
+        RecyclerView rView = view.findViewById(R.id.LeaderBoard);
+
+        rView.setHasFixedSize(true);
+        rView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        rView.setAdapter(new lbAdapter());
+
+        return view;
+    }
+}
