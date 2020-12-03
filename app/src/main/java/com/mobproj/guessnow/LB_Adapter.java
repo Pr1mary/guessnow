@@ -1,5 +1,6 @@
 package com.mobproj.guessnow;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class lbAdapter extends RecyclerView.Adapter<lbAdapter.lbHolder> {
+public class LB_Adapter extends RecyclerView.Adapter<LB_Adapter.LB_Holder> {
 
     String nameList[] = {"Joko","Susilo","Bambang"};
     Integer score = 10;
 
-    public static class lbHolder extends RecyclerView.ViewHolder {
+    public static class LB_Holder extends RecyclerView.ViewHolder {
 
         private TextView lbList;
 
-        public lbHolder(@NonNull View itemView) {
+        public LB_Holder(@NonNull View itemView) {
             super(itemView);
             lbList = itemView.findViewById(R.id.lbList);
 
@@ -36,17 +37,21 @@ public class lbAdapter extends RecyclerView.Adapter<lbAdapter.lbHolder> {
         return R.layout.leaderboard_item;
     }
 
+    @NonNull
     @Override
-    public lbHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public LB_Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-        lbHolder vh = new lbHolder(view);
+        LB_Holder vh = new LB_Holder(view);
         return vh;
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull lbHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LB_Holder holder, int position) {
         holder.getLbList().setText(nameList[position]+": "+position*score);
+        Log.d("testOut", "test out: "+position);
+
     }
 
     @Override

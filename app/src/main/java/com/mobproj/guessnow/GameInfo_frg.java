@@ -28,10 +28,13 @@ public class GameInfo_frg extends Fragment {
         roominfo.setText("Room: "+roomCode);
 
         RecyclerView rView = view.findViewById(R.id.LeaderBoard);
+        LB_Adapter lbAdapter = new LB_Adapter();
+        LinearLayoutManager llm = new LinearLayoutManager(view.getContext());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         rView.setHasFixedSize(true);
-        rView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        rView.setAdapter(new lbAdapter());
+        rView.setLayoutManager(llm);
+        rView.setAdapter(lbAdapter);
 
         return view;
     }

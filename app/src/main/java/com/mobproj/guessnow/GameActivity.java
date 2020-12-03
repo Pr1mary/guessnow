@@ -22,6 +22,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        CentralProcess.connectServer("http://192.168.18.163:3000");
+
         frameLayout = findViewById(R.id.layoutContainer);
 
         tabLayout = findViewById(R.id.tabs);
@@ -62,4 +64,9 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        CentralProcess.disconnectServer();
+    }
 }
