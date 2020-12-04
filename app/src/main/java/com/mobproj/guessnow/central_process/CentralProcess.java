@@ -18,7 +18,7 @@ public class CentralProcess {
     private static String serverURL = "http://192.168.18.163:3000";
 
     private static Socket socket;
-    private static String roomID = "400694";
+    private static String roomID;
 
     private static String currUser = new String();
 
@@ -68,7 +68,20 @@ public class CentralProcess {
         });
 
         socket.connect();
+        initName();
 
+    }
+
+    private static void initName(){
+
+        JSONObject jsonObj = new JSONObject();
+        try {
+            jsonObj.put("user", currUser);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        socket.emit(roomID+"-ld", jsonObj);
     }
 
     public static String getCurrQuestion(){
@@ -80,18 +93,18 @@ public class CentralProcess {
         socket.off(roomID+"-msg");
     }
 
-    public static void sendMsg(String room, String msg, String userID){
+    public static void sendMsg(String msg){
         JSONObject msgObj = new JSONObject();
 
         try {
-            msgObj.put("user", userID);
+            msgObj.put("user", currUser);
             msgObj.put("msg", msg);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        socket.emit(room, msgObj);
+        socket.emit(roomID+"-msg", msgObj);
     }
 
     public static String getServerURL() { return serverURL; }

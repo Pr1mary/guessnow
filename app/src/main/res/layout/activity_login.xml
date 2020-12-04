@@ -35,6 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_centerInParent="true"
-        tools:text="Join" />
+        android:text="Join" />
 
 </RelativeLayout>

@@ -58,10 +58,9 @@ public class GameRoom_frg extends Fragment {
 
     public void sendBtnAct(View view){
         String msg = inputMsg.getText().toString();
-        String currRoom = CentralProcess.getRoomID()+"-msg";
         if(TextUtils.isEmpty(msg)) return;
         inputMsg.getText().clear();
-        CentralProcess.sendMsg(currRoom, msg, CentralProcess.getCurrUser());
+        CentralProcess.sendMsg(msg);
     }
 
     public static void qstUpdate(String currQst){ qstArea.setText(currQst); }
