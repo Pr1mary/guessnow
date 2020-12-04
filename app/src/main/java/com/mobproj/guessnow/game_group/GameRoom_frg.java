@@ -1,4 +1,4 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.game_group;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,7 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.json.JSONObject;
+import com.mobproj.guessnow.central_process.CentralProcess;
+import com.mobproj.guessnow.R;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,10 @@ public class GameRoom_frg extends Fragment {
     private EditText inputMsg;
     private Button sendBtn;
 
+    static private TextView qstArea;
+
     static Chat_Adapter chatAdapter;
+    static RecyclerView chatView;
 
     @Nullable
     @Override
@@ -32,22 +36,22 @@ public class GameRoom_frg extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_game_room, container, false);
 
-        RecyclerView rView = view.findViewById(R.id.chatArea);
+        chatView = view.findViewById(R.id.chatArea);
         chatAdapter = new Chat_Adapter();
 
+        qstArea = view.findViewById(R.id.qstArea);
         inputMsg = view.findViewById(R.id.msg_input);
         sendBtn = view.findViewById(R.id.sendBtn);
 
-        sendBtn.setOnClickListener(v -> {
-            sendBtnAct(v);
-            chatAdapter.updateChat(CentralProcess.getUserList_Chat(), CentralProcess.getMsgList_Chat());
-        });
+        sendBtn.setOnClickListener(v -> sendBtnAct(v));
+
+        qstArea.setText(CentralProcess.getCurrQuestion());
 
         LinearLayoutManager llm = new LinearLayoutManager(view.getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rView.setHasFixedSize(true);
-        rView.setLayoutManager(llm);
-        rView.setAdapter(chatAdapter);
+        chatView.setHasFixedSize(true);
+        chatView.setLayoutManager(llm);
+        chatView.setAdapter(chatAdapter);
 
         return view;
     }
@@ -60,10 +64,11 @@ public class GameRoom_frg extends Fragment {
         CentralProcess.sendMsg(currRoom, msg, CentralProcess.getCurrUser());
     }
 
+    public static void qstUpdate(String currQst){ qstArea.setText(currQst); }
+
     public static void dataUpdate(ArrayList<String> msg, ArrayList<String> user){
         chatAdapter.updateChat(msg, user);
+        chatView.smoothScrollToPosition(chatAdapter.itemCountStatic());
     }
-
-
 
 }

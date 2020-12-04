@@ -1,34 +1,33 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.central_process;
 
 import android.app.Activity;
-import android.os.Debug;
 import android.util.Log;
 
-import androidx.fragment.app.Fragment;
-
-import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
+import com.mobproj.guessnow.game_group.GameRoom_frg;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CentralProcess {
+
+    private static String serverURL = "http://192.168.18.163:3000";
 
     private static Socket socket;
     private static String roomID = "400694";
 
-    private static String currUser = "Alice";
+    private static String currUser = new String();
 
-    public static ArrayList<String> userList = new ArrayList<>();
-    public static ArrayList<String> userList_Chat = new ArrayList<>();
-    public static ArrayList<String> msgList_Chat = new ArrayList<>();
+    private static ArrayList<String> userList = new ArrayList<>();
+    private static ArrayList<String> userList_Chat = new ArrayList<>();
+    private static ArrayList<String> msgList_Chat = new ArrayList<>();
+    private static String currQuestion = new String();
 
-    public static void connectServer(String serverURL, Activity act){
+    public static void connectServer(Activity act){
 
         try {
             socket = IO.socket(serverURL);
@@ -49,13 +48,31 @@ public class CentralProcess {
                 }
                 userList_Chat.add(userID);
                 msgList_Chat.add(msg);
-                Log.d("username", userID);
-                Log.d("message", msg);
                 GameRoom_frg.dataUpdate(userList_Chat, msgList_Chat);
             });
         });
+
+        socket.on(roomID+"-qst", args -> {
+            act.runOnUiThread(() -> {
+                JSONObject msgData = (JSONObject) args[0];
+                String question;
+                try{
+                    question = msgData.getString("QST");
+                } catch (JSONException e) {
+                    return;
+                }
+                currQuestion = question;
+                Log.d("question", question);
+                GameRoom_frg.qstUpdate(currQuestion);
+            });
+        });
+
         socket.connect();
 
+    }
+
+    public static String getCurrQuestion(){
+        return currQuestion;
     }
 
     public static void disconnectServer(){
@@ -77,6 +94,7 @@ public class CentralProcess {
         socket.emit(room, msgObj);
     }
 
+    public static String getServerURL() { return serverURL; }
 
     public static String getRoomID() {
         return roomID;

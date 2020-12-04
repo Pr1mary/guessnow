@@ -13,19 +13,16 @@
         android:theme="@style/Theme.Guessnow"
         android:usesCleartextTraffic="true">
         <activity android:name=".login_group.LoginActivity">
-
-        </activity>
-        <activity android:name=".connection_test.ConnectionActivity">
-
-        </activity>
-        <activity android:name=".home_group.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActivity">
+        <activity android:name=".home_group.MainActivity">
+
+        </activity>
+        <activity android:name=".game_group.GameActivity">
 
         </activity>
     </application>

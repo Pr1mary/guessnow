@@ -1,61 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fc8c03">
+    android:layout_height="match_parent">
 
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="212dp"
-        android:layout_height="158dp"
-        android:contentDescription="@string/invalid_username"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212"
-        app:srcCompat="@drawable/ic_baseline_account_box_24" />
-
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginStart="24dp"
-        android:autofillHints=""
-        android:background="#DCA639"
-        android:hint="@string/invalid_username"
-        android:inputType="textEmailAddress"
-        android:selectAllOnFocus="true"
-        android:text="@string/invalid_username"
-        android:textColor="#FFFFFF"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541"
-        tools:text="Username:" />
-
-    <Button
-        android:id="@+id/joinBtn"
+    <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:enabled="true"
-        android:textSize="24sp"
-        app:iconTint="@color/teal_700"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="GuessNow"
+        android:gravity="center"
+        android:textSize="40dp"/>
+
+    <EditText
+        android:id="@+id/usernameIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:hint="Insert username"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true"/>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_below="@+id/usernameIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
         tools:text="Join" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
