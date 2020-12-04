@@ -10,10 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Chat_Adapter extends RecyclerView.Adapter<Chat_Adapter.ChatHolder> {
 
-    String nameList[] = {"Nino","Mustang","Ladu"};
-    String chatList[] = {"soso", "toto", "mama"};
+    String nameList1[] = {"Nino","Mustang","Ladu"};
+    String chatList1[] = {"soso", "toto", "mama"};
+
+    static List<String> nameList = new ArrayList<>();
+    static List<String> chatList = new ArrayList<>();
 
     public static class ChatHolder extends RecyclerView.ViewHolder {
 
@@ -28,11 +34,9 @@ public class Chat_Adapter extends RecyclerView.Adapter<Chat_Adapter.ChatHolder> 
         }
 
         public TextView getUsrList() { return usrList; }
-
         public TextView getChatList(){
             return chatList;
         }
-
     }
 
     @Override
@@ -50,13 +54,20 @@ public class Chat_Adapter extends RecyclerView.Adapter<Chat_Adapter.ChatHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ChatHolder holder, int position) {
-        holder.getUsrList().setText(nameList[position]+": ");
-        holder.getChatList().setText(chatList[position]);
 
+        holder.getUsrList().setText(nameList.get(position)+": ");
+        holder.getChatList().setText(chatList.get(position));
     }
 
     @Override
-    public int getItemCount() {
-        return nameList.length;
+    public int getItemCount() { return nameList.size(); }
+
+    public void updateChat(ArrayList<String> nameListUpdate, ArrayList<String> msgListUpdate){
+        nameList.clear();
+        chatList.clear();
+        nameList.addAll(nameListUpdate);
+        chatList.addAll(msgListUpdate);
+        notifyDataSetChanged();
     }
+
 }

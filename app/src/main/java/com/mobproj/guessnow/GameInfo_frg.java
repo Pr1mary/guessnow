@@ -13,10 +13,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class GameInfo_frg extends Fragment {
 
     TextView roominfo;
-    Integer roomCode;
+
+    static LB_Adapter lbAdapter;
 
     @Nullable
     @Override
@@ -25,10 +28,10 @@ public class GameInfo_frg extends Fragment {
         View view = inflater.inflate(R.layout.fragment_game_info, container, false);
 
         roominfo = view.findViewById(R.id.RoomID);
-        roominfo.setText("Room: "+roomCode);
+        roominfo.setText("Room: "+CentralProcess.getRoomID());
 
         RecyclerView rView = view.findViewById(R.id.LeaderBoard);
-        LB_Adapter lbAdapter = new LB_Adapter();
+        lbAdapter = new LB_Adapter();
         LinearLayoutManager llm = new LinearLayoutManager(view.getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
@@ -38,4 +41,9 @@ public class GameInfo_frg extends Fragment {
 
         return view;
     }
+
+    public static void updateAdapter(ArrayList<String> updatedData){
+        lbAdapter.updateData(updatedData);
+    }
+
 }

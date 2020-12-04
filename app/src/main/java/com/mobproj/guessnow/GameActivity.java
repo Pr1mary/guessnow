@@ -22,13 +22,19 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        CentralProcess.connectServer("http://192.168.18.163:3000");
+        CentralProcess.connectServer("http://192.168.18.163:3000", this);
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
         frameLayout = findViewById(R.id.layoutContainer);
 
         tabLayout = findViewById(R.id.tabs);
         tabLayout.addTab(tabLayout.newTab().setText("Game Room"));
         tabLayout.addTab(tabLayout.newTab().setText("Game Info"));
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.layoutContainer,new GameRoom_frg());
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -45,7 +51,6 @@ public class GameActivity extends AppCompatActivity {
                         break;
                 }
 
-                FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.layoutContainer,fragment);
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);

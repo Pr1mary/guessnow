@@ -1,36 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#DAF7A6 ">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btn_createroom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/etUniqueCode"
+        android:layout_above="@+id/entCode"
         android:layout_centerInParent="true"
         android:layout_marginBottom="22dp"
         android:text="Create Room"/>
 
     <EditText
-        android:id="@+id/etUniqueCode"
+        android:id="@+id/entCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Input Code"
+        android:inputType="number"
+        android:hint="Input Code"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:importantForAutofill="no" />
 
     <Button
-        android:id="@+id/btnConfirm"
+        android:id="@+id/btnJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/etUniqueCode"
-        android:text="Confirm">
+        android:layout_below="@+id/entCode"
+        android:text="Join room">
         
     </Button>
 

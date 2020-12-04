@@ -17,10 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class GameRoom_frg extends Fragment {
 
     private EditText inputMsg;
     private Button sendBtn;
+
+    static Chat_Adapter chatAdapter;
 
     @Nullable
     @Override
@@ -28,18 +32,19 @@ public class GameRoom_frg extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_game_room, container, false);
 
+        RecyclerView rView = view.findViewById(R.id.chatArea);
+        chatAdapter = new Chat_Adapter();
+
         inputMsg = view.findViewById(R.id.msg_input);
         sendBtn = view.findViewById(R.id.sendBtn);
 
         sendBtn.setOnClickListener(v -> {
             sendBtnAct(v);
+            chatAdapter.updateChat(CentralProcess.getUserList_Chat(), CentralProcess.getMsgList_Chat());
         });
 
-        RecyclerView rView = view.findViewById(R.id.chatArea);
-        Chat_Adapter chatAdapter = new Chat_Adapter();
         LinearLayoutManager llm = new LinearLayoutManager(view.getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-
         rView.setHasFixedSize(true);
         rView.setLayoutManager(llm);
         rView.setAdapter(chatAdapter);
@@ -50,9 +55,15 @@ public class GameRoom_frg extends Fragment {
     public void sendBtnAct(View view){
         String msg = inputMsg.getText().toString();
         String currRoom = CentralProcess.getRoomID()+"-msg";
-        String demoRoom = "939262-msg";
         if(TextUtils.isEmpty(msg)) return;
         inputMsg.getText().clear();
-        CentralProcess.sendMsg(demoRoom, msg, "Admin");
+        CentralProcess.sendMsg(currRoom, msg, CentralProcess.getCurrUser());
     }
+
+    public static void dataUpdate(ArrayList<String> msg, ArrayList<String> user){
+        chatAdapter.updateChat(msg, user);
+    }
+
+
+
 }

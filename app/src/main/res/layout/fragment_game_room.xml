@@ -18,13 +18,15 @@
         android:padding="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/qstArea"
         android:id="@+id/chatArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"/>
+        android:layout_above="@+id/inputArea"
+        android:layout_below="@+id/qstArea"
+        android:padding="10dp" />
 
     <LinearLayout
+        android:id="@+id/inputArea"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
