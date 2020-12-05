@@ -32,7 +32,16 @@ public class NavDrawer extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                
+                int id=item.getItemId();
+                switch (id)
+                {
+                    case R.id.restart;
+                    break;
+                    case R.id.exit;
+                    break;
+
+                }
+                return true;
             }
         });
 
