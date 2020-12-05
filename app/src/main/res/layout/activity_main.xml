@@ -28,10 +28,11 @@
             android:background="#0E66B9"
             android:layout_gravity="start"
             app:headerLayout="@layout/nav_header"
-            app:menu="@menu/menu"
+            app:menu="@menu/menu2"
             app:itemBackground="@drawable/menu_item_padding"
             app:itemIconTint="#fff"
             app:itemHorizontalPadding="40dp"
+            app:itemTextColor="@android:color/white"
 
             />
     </androidx.drawerlayout.widget.DrawerLayout>
