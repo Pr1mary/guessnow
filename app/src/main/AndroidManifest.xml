@@ -13,9 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Guessnow"
         android:usesCleartextTraffic="true">
-        <activity android:name=".home_group.NavDrawer">
-
-        </activity>
         <activity android:name=".login_group.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,11 +31,7 @@
             tools:ignore="DuplicateActivity"
             android:exported="true">
 
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER">
 
-                </category>
-            </intent-filter>
         </activity>
 
     </application>

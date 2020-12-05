@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
+import com.mobproj.guessnow.game_group.GameInfo_frg;
 import com.mobproj.guessnow.game_group.GameRoom_frg;
 
 import org.json.JSONException;
@@ -24,6 +25,7 @@ public class CentralProcess {
     private static String currUser = new String();
 
     private static ArrayList<String> userList = new ArrayList<>();
+    private static ArrayList<Integer> scoreList = new ArrayList<>();
     private static ArrayList<String> userList_Chat = new ArrayList<>();
     private static ArrayList<String> msgList_Chat = new ArrayList<>();
     private static String currQuestion = new String();
@@ -36,6 +38,10 @@ public class CentralProcess {
             e.printStackTrace();
         }
 
+        socket.connect();
+        initName();
+
+        //message process
         socket.on(roomID+"-msg", args -> {
             act.runOnUiThread(() -> {
                 JSONObject msgData = (JSONObject) args[0];
@@ -53,6 +59,7 @@ public class CentralProcess {
             });
         });
 
+        //question process
         socket.on(roomID+"-qst", args -> {
             act.runOnUiThread(() -> {
                 JSONObject msgData = (JSONObject) args[0];
@@ -63,13 +70,28 @@ public class CentralProcess {
                     return;
                 }
                 currQuestion = question;
-                Log.d("question", question);
                 GameRoom_frg.qstUpdate(currQuestion);
             });
         });
 
-        socket.connect();
-        initName();
+        //leaderboard process
+        socket.on(roomID+"-ld", args -> {
+            act.runOnUiThread(() -> {
+                JSONObject msgData = (JSONObject) args[0];
+                String userID;
+                Integer score;
+                try{
+                    userID = msgData.getString("NAME");
+                    score = msgData.getInt("SCORE");
+                } catch (JSONException e) {
+                    return;
+                }
+                userList.add(userID);
+                scoreList.add(score);
+                GameInfo_frg.updateAdapter(userList, scoreList);
+            });
+        });
+
 
     }
 
@@ -146,4 +168,11 @@ public class CentralProcess {
         return userList;
     }
 
+    public static ArrayList<Integer> getScoreList() {
+        return scoreList;
+    }
+
+    public static void setUserScore(ArrayList<Integer> userScore) {
+        CentralProcess.scoreList = userScore;
+    }
 }

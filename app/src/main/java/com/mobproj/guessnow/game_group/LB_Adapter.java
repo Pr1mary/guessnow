@@ -14,9 +14,10 @@ import java.util.ArrayList;
 
 public class LB_Adapter extends RecyclerView.Adapter<LB_Adapter.LB_Holder> {
 
-    Integer score = 10;
-
     ArrayList<String> nameList = new ArrayList<>();
+    ArrayList<Integer> scoreList = new ArrayList<>();
+
+    String nameArr[] = {"Joko", "Susilo", "Anton"};
 
     public static class LB_Holder extends RecyclerView.ViewHolder {
 
@@ -51,8 +52,8 @@ public class LB_Adapter extends RecyclerView.Adapter<LB_Adapter.LB_Holder> {
 
     @Override
     public void onBindViewHolder(@NonNull LB_Holder holder, int position) {
-        holder.getLbList().setText(nameList.get(position)+": "+position*score);
-
+        holder.getLbList().setText(nameList.get(position)+": "+scoreList.get(position));
+//        holder.getLbList().setText(nameArr[position]);
     }
 
     @Override
@@ -60,9 +61,11 @@ public class LB_Adapter extends RecyclerView.Adapter<LB_Adapter.LB_Holder> {
         return nameList.size();
     }
 
-    public void updateData(ArrayList<String> nameListUpdate){
+    public void updateData(ArrayList<String> nameListUpdate, ArrayList<Integer> scoreListUpdate){
         nameList.clear();
+        scoreList.clear();
         nameList.addAll(nameListUpdate);
+        scoreList.addAll(scoreListUpdate);
         notifyDataSetChanged();
     }
 

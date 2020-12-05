@@ -21,7 +21,7 @@ public class GameInfo_frg extends Fragment {
 
     TextView roominfo;
 
-    static LB_Adapter lbAdapter;
+    static LB_Adapter lbAdapter = new LB_Adapter();;
 
     @Nullable
     @Override
@@ -33,7 +33,6 @@ public class GameInfo_frg extends Fragment {
         roominfo.setText("Room: "+ CentralProcess.getRoomID());
 
         RecyclerView rView = view.findViewById(R.id.LeaderBoard);
-        lbAdapter = new LB_Adapter();
         LinearLayoutManager llm = new LinearLayoutManager(view.getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
@@ -44,8 +43,8 @@ public class GameInfo_frg extends Fragment {
         return view;
     }
 
-    public static void updateAdapter(ArrayList<String> updatedData){
-        lbAdapter.updateData(updatedData);
+    public static void updateAdapter(ArrayList<String> updatedData, ArrayList<Integer> updatedScore){
+        lbAdapter.updateData(updatedData, updatedScore);
     }
 
 }
