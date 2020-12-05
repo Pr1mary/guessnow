@@ -92,8 +92,15 @@ public class CentralProcess {
                 } catch (JSONException e) {
                     return;
                 }
-                userList.add(userID);
-                scoreList.add(score);
+
+                if(userList.contains(userID)){
+                    Integer pos = userList.indexOf(userID);
+                    scoreList.set(pos, score);
+                }else{
+                    userList.add(userID);
+                    scoreList.add(score);
+                }
+
                 GameInfo_frg.updateAdapter(userList, scoreList);
             });
         });
