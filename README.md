@@ -11,3 +11,5 @@ Link to the back-end api repos: https://github.com/Pr1mary/guessnow-api
 - 2201835593 - dimas aditya nugraha
 - 2201832370 - Ridho Kurniawan Harefa
 - 2201817136 - Aditya Tjahjadi
+
+### Screenshot tampilan aplikasi
