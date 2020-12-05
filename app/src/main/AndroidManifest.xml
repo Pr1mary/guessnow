@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Guessnow"
         android:usesCleartextTraffic="true">
+        <activity android:name=".home_group.NavDrawer">
+
+        </activity>
         <activity android:name=".login_group.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
