@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mobproj.guessnow">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
-
 
     <application
         android:allowBackup="true"
@@ -15,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Guessnow"
         android:usesCleartextTraffic="true">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCrwItNPibP4alVR7a2BU77qkkivdpmtuo"/>
+        <activity android:name=".home_group.NavDrawer"></activity>
 
-        <activity android:name=".not_used.LocationPicker"></activity>
+        <activity android:name=".not_used.LocationPicker" />
+
         <activity android:name=".not_used.FillAddress" />
         <activity android:name=".login_group.LoginActivity" />
         <activity android:name=".connection_test.ConnectionActivity" />
@@ -30,7 +25,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameActivity" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCrwItNPibP4alVR7a2BU77qkkivdpmtuo" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
