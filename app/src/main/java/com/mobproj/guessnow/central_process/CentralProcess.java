@@ -1,6 +1,7 @@
 package com.mobproj.guessnow.central_process;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.github.nkzawa.socketio.client.IO;

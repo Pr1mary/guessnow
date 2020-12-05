@@ -47,18 +47,13 @@ public class GameActivity extends AppCompatActivity {
                         frgTransaction(fragmentManager, new GameInfo_frg());
                         break;
                 }
-
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
+            public void onTabUnselected(TabLayout.Tab tab) { }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
+            public void onTabReselected(TabLayout.Tab tab) { }
         });
     }
 
