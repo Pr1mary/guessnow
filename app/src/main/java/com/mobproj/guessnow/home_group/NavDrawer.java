@@ -3,11 +3,11 @@ package com.mobproj.guessnow.home_group;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 import com.mobproj.guessnow.R;
@@ -35,9 +35,9 @@ public class NavDrawer extends AppCompatActivity {
                 int id=item.getItemId();
                 switch (id)
                 {
-                    case R.id.restart;
+                    case R.id.restart:
                     break;
-                    case R.id.exit;
+                    case R.id.exit:
                     break;
 
                 }
