@@ -4,36 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circle_imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/ic_baseline_account_box_24"
-        android:layout_above="@+id/user"
-        android:layout_centerInParent="true"/>
-
-    <ImageView
-        android:id="@+id/ImageViewProfile"
-        android:layout_width="120dp"
-        android:layout_height="120dp"/>
 
     <TextView
-        android:id="@+id/user"
+        android:id="@+id/userDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_red_dark"
-        android:text="Welcome user"
+        android:text="Username"
+        android:gravity="center"
         android:textSize="50sp"
         android:layout_centerInParent="true"/>
 
     <Button
-        android:id="@+id/btn_logout"
+        android:id="@+id/logoutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/user"
+        android:layout_below="@+id/userDisplay"
         android:layout_centerInParent="true"
-        android:layout_marginTop="65dp"
+        android:layout_margin="50dp"
         android:text="Log out"/>
-
 
 </RelativeLayout>

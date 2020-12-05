@@ -12,9 +12,9 @@
         android:layout_alignParentTop="true"
         android:text="Question 1"
         android:textAlignment="center"
-        android:textSize="50sp"
+        android:autoSizeTextType="uniform"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:padding="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mobproj.guessnow">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,29 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Guessnow"
         android:usesCleartextTraffic="true">
-        <activity android:name=".home_group.NavDrawer"></activity>
-
-        <activity android:name=".not_used.LocationPicker" />
-
-        <activity android:name=".not_used.FillAddress" />
-        <activity android:name=".login_group.LoginActivity" />
-        <activity android:name=".connection_test.ConnectionActivity" />
-        <activity android:name=".home_group.MainActivity">
+        <activity android:name=".login_group.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GameActivity" />
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCrwItNPibP4alVR7a2BU77qkkivdpmtuo" />
-    </application>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
+        <activity android:name=".home_group.MainActivity">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+        </activity>
+        <activity android:name=".game_group.GameActivity">
+
+        </activity>
+    </application>
 
 </manifest>

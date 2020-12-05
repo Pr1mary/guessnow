@@ -1,7 +1,6 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.game_group;
 
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.mobproj.guessnow.central_process.CentralProcess;
+import com.mobproj.guessnow.R;
 
 import java.util.ArrayList;
 
@@ -28,7 +30,7 @@ public class GameInfo_frg extends Fragment {
         View view = inflater.inflate(R.layout.fragment_game_info, container, false);
 
         roominfo = view.findViewById(R.id.RoomID);
-        roominfo.setText("Room: "+CentralProcess.getRoomID());
+        roominfo.setText("Room: "+ CentralProcess.getRoomID());
 
         RecyclerView rView = view.findViewById(R.id.LeaderBoard);
         lbAdapter = new LB_Adapter();

@@ -1,4 +1,4 @@
-package com.mobproj.guessnow;
+package com.mobproj.guessnow.game_group;
 
 import android.os.Bundle;
 import android.widget.FrameLayout;
@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.tabs.TabLayout;
+import com.mobproj.guessnow.central_process.CentralProcess;
+import com.mobproj.guessnow.R;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        CentralProcess.connectServer("http://192.168.18.163:3000", this);
+        CentralProcess.connectServer(this);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         frameLayout = findViewById(R.id.layoutContainer);
@@ -31,41 +33,27 @@ public class GameActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Game Room"));
         tabLayout.addTab(tabLayout.newTab().setText("Game Info"));
 
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.layoutContainer,new GameRoom_frg());
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        fragmentTransaction.commit();
+        frgTransaction(fragmentManager, new GameRoom_frg());
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-                Fragment fragment = new GameRoom_frg();
-
                 switch (tab.getPosition()){
                     case 0:
-                        fragment = new GameRoom_frg();
+                        frgTransaction(fragmentManager, new GameRoom_frg());
                         break;
                     case 1:
-                        fragment = new GameInfo_frg();
+                        frgTransaction(fragmentManager, new GameInfo_frg());
                         break;
                 }
-
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.layoutContainer,fragment);
-                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                fragmentTransaction.commit();
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
+            public void onTabUnselected(TabLayout.Tab tab) { }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
+            public void onTabReselected(TabLayout.Tab tab) { }
         });
     }
 
@@ -73,5 +61,13 @@ public class GameActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         CentralProcess.disconnectServer();
+    }
+
+    private void frgTransaction(FragmentManager frgManager, Fragment frg){
+        Fragment fragment = frg;
+        FragmentTransaction fragmentTransaction = frgManager.beginTransaction();
+        fragmentTransaction.replace(R.id.layoutContainer,fragment);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
     }
 }
