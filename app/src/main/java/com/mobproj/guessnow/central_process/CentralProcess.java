@@ -20,7 +20,7 @@ public class CentralProcess {
     private static String serverURL = "http://192.168.18.163:3000";
 
     private static Socket socket;
-    private static String roomID;
+    private static String roomID, lastRoomID = new String();
 
     private static String currUser = new String();
 
@@ -40,6 +40,12 @@ public class CentralProcess {
 
         socket.connect();
         initName();
+
+        if(lastRoomID != roomID){
+            lastRoomID = roomID;
+            userList.clear();
+            scoreList.clear();
+        }
 
         //message process
         socket.on(roomID+"-msg", args -> {
