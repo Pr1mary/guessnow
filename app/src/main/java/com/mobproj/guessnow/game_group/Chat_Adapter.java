@@ -15,9 +15,6 @@ import java.util.List;
 
 public class Chat_Adapter extends RecyclerView.Adapter<Chat_Adapter.ChatHolder> {
 
-    String nameList1[] = {"Nino","Mustang","Ladu"};
-    String chatList1[] = {"soso", "toto", "mama"};
-
     static List<String> nameList = new ArrayList<>();
     static List<String> chatList = new ArrayList<>();
 
@@ -47,9 +44,7 @@ public class Chat_Adapter extends RecyclerView.Adapter<Chat_Adapter.ChatHolder> 
     public ChatHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-        ChatHolder vh = new ChatHolder(view);
-
-        return vh;
+        return new ChatHolder(view);
     }
 
     @Override
@@ -61,8 +56,6 @@ public class Chat_Adapter extends RecyclerView.Adapter<Chat_Adapter.ChatHolder> 
 
     @Override
     public int getItemCount() { return nameList.size(); }
-
-    public static int itemCountStatic() { return nameList.size(); }
 
     public void updateChat(ArrayList<String> nameListUpdate, ArrayList<String> msgListUpdate){
         nameList.clear();

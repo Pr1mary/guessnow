@@ -1,8 +1,6 @@
 package com.mobproj.guessnow.central_process;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
@@ -15,7 +13,10 @@ import org.json.JSONObject;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-public class CentralProcess {
+public class CentralProcess{
+
+    private static ScoreboardListener scrListener = null;
+    private static GameListener gameListener = null;
 
     private static String serverURL = "http://192.168.18.163:3000";
 
@@ -43,8 +44,6 @@ public class CentralProcess {
 
         if(lastRoomID != roomID){
             lastRoomID = roomID;
-            userList.clear();
-            scoreList.clear();
         }
 
         //message process
@@ -61,7 +60,9 @@ public class CentralProcess {
                 }
                 userList_Chat.add(userID);
                 msgList_Chat.add(msg);
-                GameRoom_frg.dataUpdate(userList_Chat, msgList_Chat);
+                if(gameListener != null)
+                    gameListener.updateChat( userList_Chat, msgList_Chat);
+//                GameRoom_frg.dataUpdate(userList_Chat, msgList_Chat);
             });
         });
 
@@ -76,7 +77,9 @@ public class CentralProcess {
                     return;
                 }
                 currQuestion = question;
-                GameRoom_frg.qstUpdate(currQuestion);
+                if(gameListener != null)
+                    gameListener.updateQst(currQuestion);
+//                GameRoom_frg.qstUpdate(currQuestion);
             });
         });
 
@@ -100,12 +103,28 @@ public class CentralProcess {
                     userList.add(userID);
                     scoreList.add(score);
                 }
+                if(scrListener != null)
+                    scrListener.updateData(userList, scoreList);
 
-                GameInfo_frg.updateAdapter(userList, scoreList);
             });
         });
 
+    }
 
+    public static void addGameListener(GameListener listener){
+        gameListener = listener;
+    }
+    public static boolean statusGameListener(){
+        if(gameListener == null) return false;
+        else return true;
+    }
+
+    public static void addScoreListener(ScoreboardListener listener){
+        scrListener = listener;
+    }
+    public static boolean statusScoreListener(){
+        if(scrListener == null) return false;
+        else return true;
     }
 
     private static void initName(){
@@ -126,7 +145,9 @@ public class CentralProcess {
 
     public static void disconnectServer(){
         socket.disconnect();
-        socket.off(roomID+"-msg");
+        socket.off(roomID+"-msg", args -> {
+
+        });
     }
 
     public static void sendMsg(String msg){
@@ -151,21 +172,18 @@ public class CentralProcess {
 
     public static void setRoomID(String roomID) {
         CentralProcess.roomID = roomID;
-    }
 
-    public static ArrayList<String> getUserList_Chat() {
-        return userList_Chat;
-    }
-
-    public static ArrayList<String> getMsgList_Chat() {
-        return msgList_Chat;
+        userList.clear();
+        scoreList.clear();
     }
 
     public static void clearChat() {
         if(!(userList_Chat.isEmpty() && msgList_Chat.isEmpty())){
             userList_Chat.clear();
             msgList_Chat.clear();
-            GameRoom_frg.dataUpdate(userList_Chat, msgList_Chat);
+            if(gameListener != null)
+                gameListener.updateChat(userList_Chat, msgList_Chat);
+//            GameRoom_frg.dataUpdate(userList_Chat, msgList_Chat);
         }
     }
 
@@ -185,7 +203,4 @@ public class CentralProcess {
         return scoreList;
     }
 
-    public static void setUserScore(ArrayList<Integer> userScore) {
-        CentralProcess.scoreList = userScore;
-    }
 }

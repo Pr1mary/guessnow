@@ -14,14 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobproj.guessnow.central_process.CentralProcess;
 import com.mobproj.guessnow.R;
+import com.mobproj.guessnow.central_process.ScoreboardListener;
 
 import java.util.ArrayList;
 
-public class GameInfo_frg extends Fragment {
+public class GameInfo_frg extends Fragment implements ScoreboardListener {
 
     TextView roominfo;
 
-    static LB_Adapter lbAdapter = new LB_Adapter();;
+    LB_Adapter lbAdapter = new LB_Adapter();
+
 
     @Nullable
     @Override
@@ -32,6 +34,9 @@ public class GameInfo_frg extends Fragment {
         roominfo = view.findViewById(R.id.RoomID);
         roominfo.setText("Room: "+ CentralProcess.getRoomID());
 
+        CentralProcess.addScoreListener(this);
+        updateData(CentralProcess.getUserList(), CentralProcess.getScoreList());
+
         RecyclerView rView = view.findViewById(R.id.LeaderBoard);
         LinearLayoutManager llm = new LinearLayoutManager(view.getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
@@ -41,10 +46,11 @@ public class GameInfo_frg extends Fragment {
         rView.setAdapter(lbAdapter);
 
         return view;
+
     }
 
-    public static void updateAdapter(ArrayList<String> updatedData, ArrayList<Integer> updatedScore){
-        lbAdapter.updateData(updatedData, updatedScore);
+    @Override
+    public void updateData(ArrayList<String> nameListUpdate, ArrayList<Integer> scoreListUpdate) {
+        lbAdapter.updateData(nameListUpdate, scoreListUpdate);
     }
-
 }
