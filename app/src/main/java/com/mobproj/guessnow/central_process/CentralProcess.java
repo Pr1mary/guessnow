@@ -145,9 +145,7 @@ public class CentralProcess{
 
     public static void disconnectServer(){
         socket.disconnect();
-        socket.off(roomID+"-msg", args -> {
-
-        });
+        socket.off(roomID+"-msg");
     }
 
     public static void sendMsg(String msg){
