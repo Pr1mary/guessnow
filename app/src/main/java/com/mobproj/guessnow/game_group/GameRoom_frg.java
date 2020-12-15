@@ -17,18 +17,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mobproj.guessnow.central_process.CentralProcess;
 import com.mobproj.guessnow.R;
+import com.mobproj.guessnow.central_process.GameListener;
 
 import java.util.ArrayList;
 
-public class GameRoom_frg extends Fragment {
+public class GameRoom_frg extends Fragment implements GameListener {
 
     private EditText inputMsg;
     private Button sendBtn;
+    private TextView qstArea;
 
-    static private TextView qstArea;
-
-    static Chat_Adapter chatAdapter;
-    static RecyclerView chatView;
+    private Chat_Adapter chatAdapter;
+    private RecyclerView chatView;
 
     @Nullable
     @Override
@@ -42,6 +42,8 @@ public class GameRoom_frg extends Fragment {
         qstArea = view.findViewById(R.id.qstArea);
         inputMsg = view.findViewById(R.id.msg_input);
         sendBtn = view.findViewById(R.id.sendBtn);
+
+        CentralProcess.addGameListener(this);
 
         sendBtn.setOnClickListener(v -> sendBtnAct(v));
 
@@ -63,11 +65,14 @@ public class GameRoom_frg extends Fragment {
         CentralProcess.sendMsg(msg);
     }
 
-    public static void qstUpdate(String currQst){ qstArea.setText(currQst); }
-
-    public static void dataUpdate(ArrayList<String> msg, ArrayList<String> user){
-        chatAdapter.updateChat(msg, user);
-        chatView.smoothScrollToPosition(chatAdapter.itemCountStatic());
+    @Override
+    public void updateQst(String currQst) {
+        qstArea.setText(currQst);
     }
 
+    @Override
+    public void updateChat(ArrayList<String> nameListUpdate, ArrayList<String> msgListUpdate) {
+        chatAdapter.updateChat(nameListUpdate, msgListUpdate);
+        chatView.smoothScrollToPosition(chatAdapter.getItemCount());
+    }
 }

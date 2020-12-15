@@ -17,8 +17,6 @@ public class LB_Adapter extends RecyclerView.Adapter<LB_Adapter.LB_Holder> {
     ArrayList<String> nameList = new ArrayList<>();
     ArrayList<Integer> scoreList = new ArrayList<>();
 
-    String nameArr[] = {"Joko", "Susilo", "Anton"};
-
     public static class LB_Holder extends RecyclerView.ViewHolder {
 
         private TextView lbList;
@@ -45,15 +43,13 @@ public class LB_Adapter extends RecyclerView.Adapter<LB_Adapter.LB_Holder> {
     public LB_Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-        LB_Holder vh = new LB_Holder(view);
-        return vh;
+        return new LB_Holder(view);
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull LB_Holder holder, int position) {
         holder.getLbList().setText(nameList.get(position)+": "+scoreList.get(position));
-//        holder.getLbList().setText(nameArr[position]);
     }
 
     @Override
